@@ -12,7 +12,7 @@ success message, error message or info message.
 Usage
 ------------
 
-Usage in controller :
+• Usage in controller :
 
 ```php
 $this->flashMessenger()->addInfoMessage('bar-info');
@@ -20,6 +20,8 @@ $this->flashMessenger()->addSuccessMessage('bar-success');
 $this->flashMessenger()->addErrorMessage('bar-error');
 ```
 Just active the module and the FlashMessenger will have features without BC !
+
+• Usage in view :
 
 And to be complete, there is a view helper. Usage in a view to get list of messages :
 
@@ -37,7 +39,15 @@ You can directly have a render of the messages :
 ?>
 ```
 
-By default, the format is "<ul class="info"><li>first message</li></ul>".
+By default, the format is
+
+```php
+<ul class="info">
+    <li>first message</li>
+    <li>second message</li>
+</ul>
+```
+
 You can change the format, like this :
 
 ```php
