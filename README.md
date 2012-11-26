@@ -19,7 +19,8 @@ $this->flashMessenger()->addInfoMessage('bar-info');
 $this->flashMessenger()->addSuccessMessage('bar-success');
 $this->flashMessenger()->addErrorMessage('bar-error');
 ```
-Just active the module and the FlashMessenger will have features without BC !
+Just active the module and the FlashMessenger will have features without BC ! You can use SuperMessenger by the identifier "FlashMessenger" with the alias.
+You could use the identifier "SuperMessenger" to pilot the plugin.
 
 • Usage in view :
 
@@ -60,7 +61,7 @@ You can change the format, like this :
 ?>
 ```
 
-You change easily the class CSS with :
+You can change easily the class CSS with :
 
 ```php
 <?php
