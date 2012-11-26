@@ -39,7 +39,7 @@ You can directly have a render of the messages :
 ?>
 ```
 
-By default, the format is
+By default, the format is :
 
 ```php
 <ul class="info">
@@ -58,4 +58,19 @@ You can change the format, like this :
                 ->setMessageCloseString('</p></div>')
                 ->render('info');
 ?>
+```
+
+You change easily the class CSS with :
+
+```php
+<?php
+    echo $this->flashMessenger()->render('info', array('foo-baz', 'foo-bar'));
+?>
+```
+
+```php
+<ul class="foo-baz foo-bar">
+    <li>first message</li>
+    <li>second message</li>
+</ul>
 ```
