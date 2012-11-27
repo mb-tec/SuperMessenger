@@ -1,12 +1,12 @@
 ZF2 SuperMessenger module
 ==============
 
-Version 1.1 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
+Version 1.0 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
 
 Introduction
 ------------
 
-ZF2 SuperMessenger module provide new feature for plugin FlashMessenger. Now, you can add directly 3 level of messages : 
+ZF2 SuperMessenger module provide new features for plugin FlashMessenger. Now, you can add directly 3 level of messages : 
 success message, error message or info message.
 
 Usage
