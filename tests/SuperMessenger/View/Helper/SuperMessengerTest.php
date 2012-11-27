@@ -38,6 +38,8 @@ class SuperMessengerTest extends \PHPUnit_Framework_TestCase
 
         $sm = new ServiceManager();
         $sm->setService('ControllerPluginManager', $controllerPluginManager);
+        $sm->setAllowOverride(true);
+        $sm->setService('Config', $config);
         $helperPluginManager->setServiceLocator($sm);
         $controllerPluginManager->setServiceLocator($sm);
 
@@ -129,6 +131,25 @@ class SuperMessengerTest extends \PHPUnit_Framework_TestCase
                 ->setMessageSeparatorString('</p><p>')
                 ->setMessageCloseString('</p></div>')
                 ->render(SuperMessenger::INFO_MESSAGE, array('foo-baz', 'foo-bar'));
+        $this->assertEquals($displayInfoAssertion, $displayInfo);
+    }
+
+    public function testCanDisplayListOfMessagesCustomisedByConfig()
+    {
+        $this->seedMessages();
+
+        $config = include __DIR__ . '/../../../module.config.test.php';
+        $sm = new ServiceManager();
+        $sm->setService('Config', $config);
+        $helperPluginManager = new HelperPluginManager(new Config($config['view_helpers']));
+        $controllerPluginManager = new PluginManager(new Config($config['controller_plugins']));
+        $helperPluginManager->setServiceLocator($sm);
+        $controllerPluginManager->setServiceLocator($sm);
+        $sm->setService('ControllerPluginManager', $controllerPluginManager);
+        $viewHelperFlashMessenger = $helperPluginManager->get('flashmessenger');
+
+        $displayInfoAssertion = '<div class="info"><ul><li>bar-info</li></ul></div>';
+        $displayInfo = $viewHelperFlashMessenger->render(SuperMessenger::INFO_MESSAGE);
         $this->assertEquals($displayInfoAssertion, $displayInfo);
     }
 }

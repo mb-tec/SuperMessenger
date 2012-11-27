@@ -2,9 +2,9 @@
 
 return array(
     'super_messenger' => array(
-        'message_open_format' => '<ul%s><li>',
+        'message_open_format' => '<div%s><ul><li>',
         'message_separator_string' => '</li><li>',
-        'message_close_string' => '</li></ul>',
+        'message_close_string' => '</li></ul></div>',
     ),
     'controller_plugins' => array(
         'invokables' => array(
@@ -15,8 +15,8 @@ return array(
         ),
     ),
     'view_helpers' => array(
-        'invokables' => array(
-            'supermessenger' => 'SuperMessenger\View\Helper\SuperMessenger',
+        'factories' => array(
+            'supermessenger' => 'SuperMessenger\View\Helper\Service\SuperMessengerFactory',
         ),
         'aliases' => array(
             'flashmessenger' => 'supermessenger',

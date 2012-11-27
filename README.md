@@ -1,7 +1,7 @@
 ZF2 SuperMessenger module
 ==============
 
-Version 1.0 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
+Version 1.1 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
 
 Introduction
 ------------
@@ -59,6 +59,16 @@ You can change the format, like this :
                 ->setMessageCloseString('</p></div>')
                 ->render('info');
 ?>
+```
+
+Format could be changed in config :
+
+```php
+'super_messenger' => array(
+    'message_open_format' => '<div%s><ul><li>',
+    'message_separator_string' => '</li><li>',
+    'message_close_string' => '</li></ul></div>',
+),
 ```
 
 You can change easily the class CSS with :
