@@ -76,7 +76,7 @@ class SuperMessengerTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function testCanRetrieveMessagesFromPluginController()
+    public function testCanRetrieveMessages()
     {
         $viewHelperFlashMessenger = $this->viewHelperFlashMessenger;
 
@@ -87,10 +87,15 @@ class SuperMessengerTest extends \PHPUnit_Framework_TestCase
 
         $this->seedMessages();
 
+        $this->assertTrue(count($viewHelperFlashMessenger('default')) > 0);
+        $this->assertTrue(count($viewHelperFlashMessenger('info')) > 0);
+        $this->assertTrue(count($viewHelperFlashMessenger('success')) > 0);
+        $this->assertTrue(count($viewHelperFlashMessenger('error')) > 0);
+
         $this->assertTrue($this->controllerPluginFlashMessenger->hasMessages());
-        $this->assertTrue($viewHelperFlashMessenger()->hasInfoMessages());
-        $this->assertTrue($viewHelperFlashMessenger()->hasSuccessMessages());
-        $this->assertTrue($viewHelperFlashMessenger()->hasErrorMessages());
+        $this->assertTrue($this->controllerPluginFlashMessenger->hasInfoMessages());
+        $this->assertTrue($this->controllerPluginFlashMessenger->hasSuccessMessages());
+        $this->assertTrue($this->controllerPluginFlashMessenger->hasErrorMessages());
     }
 
     public function testCanProxyAndRetrieveMessagesFromPluginController()
@@ -118,6 +123,16 @@ class SuperMessengerTest extends \PHPUnit_Framework_TestCase
 
         $displayInfoAssertion = '<ul class="info"><li>bar-info</li></ul>';
         $displayInfo = $this->viewHelperFlashMessenger->render(SuperMessenger::INFO_MESSAGE);
+        $this->assertEquals($displayInfoAssertion, $displayInfo);
+    }
+
+    public function testCanDisplayListOfMessagesByInvoke()
+    {
+        $viewHelperFlashMessenger = $this->viewHelperFlashMessenger;
+        $this->seedMessages();
+
+        $displayInfoAssertion = '<ul class="info"><li>bar-info</li></ul>';
+        $displayInfo = $viewHelperFlashMessenger()->render(SuperMessenger::INFO_MESSAGE);
         $this->assertEquals($displayInfoAssertion, $displayInfo);
     }
 

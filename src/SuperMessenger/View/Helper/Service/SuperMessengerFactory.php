@@ -19,14 +19,14 @@ class SuperMessengerFactory implements FactoryInterface
         $config = $serviceLocator->get('Config');
         $config = $config['super_messenger'];
         $helper = new SuperMessenger();
-        if(isset($config['message_open_format'])) {
-            $helper->setMessageOpenFormat($config['message_open_format']);
+        if(isset($config['view']['helper']['message_open_format'])) {
+            $helper->setMessageOpenFormat($config['view']['helper']['message_open_format']);
         }
-        if(isset($config['message_separator_string'])) {
-            $helper->setMessageSeparatorString($config['message_separator_string']);
+        if(isset($config['view']['helper']['message_separator_string'])) {
+            $helper->setMessageSeparatorString($config['view']['helper']['message_separator_string']);
         }
-        if(isset($config['message_close_string'])) {
-            $helper->setMessageCloseString($config['message_close_string']);
+        if(isset($config['view']['helper']['message_close_string'])) {
+            $helper->setMessageCloseString($config['view']['helper']['message_close_string']);
         }
         return $helper;
     }

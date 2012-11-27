@@ -45,15 +45,15 @@ class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterf
     /**
      * Returns the flash messenger plugin controller
      *
-     * @return SuperMessenger\Controller\Plugin\SuperMessenger
+     * @return SuperMessenger|SuperMessenger\Controller\Plugin\SuperMessenger
      */
     public function __invoke($namespace = null)
     {
-        $flashMessenger = $this->getControllerPluginFlashMessenger();
         if(null === $namespace) {
-            return $flashMessenger;
+            return $this;
         }
-        return $flashMessenger->getMessages($namespace);
+        $flashMessenger = $this->getControllerPluginFlashMessenger();
+        return $flashMessenger->getMessagesFromNamespace($namespace);
     }
 
     /**
