@@ -61,7 +61,7 @@ You can change the format, like this :
 ?>
 ```
 
-Format could be changed in config :
+Format could be changed in supermessenger.local.php which will be moved in "/config/autoload" :
 
 ```php
 'super_messenger' => array(

@@ -1,13 +1,6 @@
 <?php
 
 return array(
-    'super_messenger' => array(
-        'view' => array(
-            'helper' => array(
-                // define here the message format
-            ),
-        ),
-    ),
     'controller_plugins' => array(
         'invokables' => array(
             'supermessenger' => 'SuperMessenger\Controller\Plugin\SuperMessenger',

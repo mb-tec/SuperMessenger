@@ -33,6 +33,7 @@ class SuperMessengerTest extends \PHPUnit_Framework_TestCase
         $this->session = new SessionManager();
 
         $config = include __DIR__ . '/../../../../config/module.config.php';
+        $config = array_merge($config, include __DIR__ . '/../../../../config/supermessenger.local.php');
         $helperPluginManager = new HelperPluginManager(new Config($config['view_helpers']));
         $controllerPluginManager = new PluginManager(new Config($config['controller_plugins']));
 
