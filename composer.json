@@ -1,0 +1,29 @@
+{
+    "name": "blanchonvincent/super-messengerd",
+    "description": "ZF2 module v1.0.0 - Boost your FlashMessenger !",
+    "version": "1.0.0",
+    "type": "module",
+    "license": "MIT",
+    "tags": [
+        "zend framework",
+        "messages",
+        "module"
+    ],
+    "homepage": "https://github.com/blanchonvincent/SuperMessenger",
+    "authors": [
+        {
+            "name": "Vincent Blanchon",
+            "email": "blanchon.vincent@gmail.com",
+            "homepage": "http://developpeur-zend-framework.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+    	"psr-0": {
+            "SuperMessenger": "src/"
+    	}
+    }
+}

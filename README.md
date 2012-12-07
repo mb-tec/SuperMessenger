@@ -1,7 +1,7 @@
 ZF2 SuperMessenger module
 ==============
 
-Version 1.0 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
+Version 1.0.0 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
 
 Introduction
 ------------
