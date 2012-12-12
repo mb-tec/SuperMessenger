@@ -24,6 +24,9 @@
     "autoload": {
     	"psr-0": {
             "SuperMessenger": "src/"
-    	}
+    	},
+        "classmap": [
+            "./Module.php"
+        ]
     }
 }
