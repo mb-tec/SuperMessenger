@@ -69,11 +69,11 @@ class SuperMessengerTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertEquals(
             'SuperMessenger\Controller\Plugin\SuperMessenger',
-            get_class($this->viewHelperFlashMessenger->getControllerPluginFlashMessenger())
+            get_class($this->viewHelperFlashMessenger->getPluginFlashMessenger())
         );
         $this->assertSame(
             $this->controllerPluginFlashMessenger,
-            $this->viewHelperFlashMessenger->getControllerPluginFlashMessenger()
+            $this->viewHelperFlashMessenger->getPluginFlashMessenger()
         );
     }
 

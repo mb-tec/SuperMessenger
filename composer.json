@@ -1,7 +1,7 @@
 {
     "name": "blanchonvincent/super-messenger",
-    "description": "ZF2 module v1.0.0 - Boost your FlashMessenger !",
-    "version": "1.0.0",
+    "description": "ZF2 module v1.0.1 - Boost your FlashMessenger !",
+    "version": "1.0.1",
     "type": "module",
     "license": "MIT",
     "tags": [

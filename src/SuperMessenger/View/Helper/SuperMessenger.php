@@ -33,6 +33,11 @@ class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterf
     protected $escapeHtmlHelper;
 
     /**
+     * @var PluginSuperMessenger
+     */
+    protected $pluginFlashMessenger;
+
+    /**
      * @var array Default attributes for the open format tag
      */
     protected $classMessages = array(
@@ -52,7 +57,7 @@ class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterf
         if(null === $namespace) {
             return $this;
         }
-        $flashMessenger = $this->getControllerPluginFlashMessenger();
+        $flashMessenger = $this->getPluginFlashMessenger();
         return $flashMessenger->getMessagesFromNamespace($namespace);
     }
 
@@ -65,7 +70,7 @@ class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterf
      */
     public function __call($method, $argv)
     {
-        $flashMessenger = $this->getControllerPluginFlashMessenger();
+        $flashMessenger = $this->getPluginFlashMessenger();
         return call_user_func_array(array($flashMessenger, $method), $argv);
     }
 
@@ -76,7 +81,7 @@ class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterf
      */
     public function render($namespace = null, array $classes = array())
     {
-        $flashMessenger = $this->getControllerPluginFlashMessenger();
+        $flashMessenger = $this->getPluginFlashMessenger();
         $messages = $flashMessenger->getMessagesFromNamespace($namespace);
 
         // Prepare classes for opening tag
@@ -196,24 +201,25 @@ class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterf
     /**
      * Get the flash messenger plugin
      *
-     * @return SuperMessenger\Controller\Plugin\SuperMessenger
+     * @return PluginFlashMessenger
      */
-    public function getControllerPluginFlashMessenger()
+    public function getPluginFlashMessenger()
     {
-        $pluginManager = $this->getControllerPluginManager();
-        return $pluginManager->get('flashmessenger');
+        if(null === $this->pluginFlashMessenger) {
+            $this->setPluginFlashMessenger(new PluginFlashMessenger());
+        }
+        return $this->pluginFlashMessenger;
     }
 
     /**
-     * Get the controller plugin manager
+     * Set the flash messenger plugin
      *
-     * @return Zend\Mvc\Controller\PluginManager
+     * @return SuperMessenger
      */
-    public function getControllerPluginManager()
+    public function setPluginFlashMessenger(PluginSuperMessenger $pluginFlashMessenger)
     {
-        $abstractPluginManager = $this->getServiceLocator();
-        $serviceLocator = $abstractPluginManager->getServiceLocator();
-        return $serviceLocator->get('ControllerPluginManager');
+        $this->pluginFlashMessenger = $pluginFlashMessenger;
+        return $this;
     }
 
     /**

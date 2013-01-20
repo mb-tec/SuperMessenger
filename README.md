@@ -1,7 +1,7 @@
 ZF2 SuperMessenger module
 ==============
 
-Version 1.0.0 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
+Version 1.0.1 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
 
 Introduction
 ------------
@@ -64,10 +64,12 @@ You can change the format, like this :
 Format could be changed in supermessenger.local.php which will be moved in "/config/autoload" :
 
 ```php
-'super_messenger' => array(
-    'message_open_format' => '<div%s><ul><li>',
-    'message_separator_string' => '</li><li>',
-    'message_close_string' => '</li></ul></div>',
+'view_helper' => array(
+    'supermessenger' => array(
+        'message_open_format' => '<div%s><ul><li>',
+        'message_separator_string' => '</li><li>',
+        'message_close_string' => '</li></ul></div>',
+    ),
 ),
 ```
 
