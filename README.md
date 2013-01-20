@@ -3,6 +3,9 @@ ZF2 SuperMessenger module
 
 Version 1.0.1 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
 
+/!\ This module is now a PR to Zend Framework 2 : https://github.com/zendframework/zf2/pull/3502.
+Give me your feedback !
+
 Introduction
 ------------
 
