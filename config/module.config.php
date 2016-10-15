@@ -1,9 +1,11 @@
 <?php
 
-return array(
+namespace SuperMessenger;
+
+return [
     'controller_plugins' => array(
         'invokables' => array(
-            'supermessenger' => 'SuperMessenger\Controller\Plugin\SuperMessenger',
+            'supermessenger' => Controller\Plugin\SuperMessenger::class,
         ),
         'aliases' => array(
             'flashmessenger' => 'supermessenger',
@@ -11,10 +13,10 @@ return array(
     ),
     'view_helpers' => array(
         'factories' => array(
-            'supermessenger' => 'SuperMessenger\View\Helper\Service\SuperMessengerFactory',
+            'supermessenger' => View\Helper\Service\SuperMessengerFactory::class,
         ),
         'aliases' => array(
             'flashmessenger' => 'supermessenger',
         ),
     ),
-);
+];
