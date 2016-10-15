@@ -1,7 +1,7 @@
 {
-    "name": "blanchonvincent/super-messenger",
-    "description": "ZF2 module v1.0.1 - Boost your FlashMessenger !",
-    "version": "1.0.1",
+    "name": "mb-tec/super-messenger",
+    "description": "ZF3 module v1.1 - Boost your FlashMessenger !",
+    "version": "1.1",
     "type": "module",
     "license": "MIT",
     "tags": [
@@ -15,10 +15,16 @@
             "name": "Vincent Blanchon",
             "email": "blanchon.vincent@gmail.com",
             "homepage": "http://developpeur-zend-framework.fr"
+        },
+        {
+            "name": "Matthias Büsing",
+            "email": "info@mb-tec.eu",
+            "homepage": "http://www.mb-tec.eu",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.6",
         "zendframework/zendframework": "2.*"
     },
     "autoload": {
