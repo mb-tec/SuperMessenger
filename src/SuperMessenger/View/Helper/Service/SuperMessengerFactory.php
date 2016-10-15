@@ -7,8 +7,8 @@
 
 namespace SuperMessenger\View\Helper\Service;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
+use Interop\Container\ContainerInterface;
 use SuperMessenger\View\Helper\SuperMessenger;
 
 class SuperMessengerFactory implements FactoryInterface
