@@ -7,7 +7,7 @@
 
 namespace SuperMessenger\Controller\Plugin;
 
-use Zend\Mvc\Controller\Plugin\FlashMessenger;
+use Zend\Mvc\Plugin\FlashMessenger\FlashMessenger;
 use Zend\Session\Container;
 
 class SuperMessenger extends FlashMessenger
