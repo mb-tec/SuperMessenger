@@ -3,20 +3,20 @@
 namespace SuperMessenger;
 
 return [
-    'controller_plugins' => array(
-        'invokables' => array(
+    'controller_plugins' => [
+        'invokables' => [
             'supermessenger' => Controller\Plugin\SuperMessenger::class,
-        ),
-        'aliases' => array(
+        ],
+        'aliases' => [
             'flashmessenger' => 'supermessenger',
-        ),
-    ),
-    'view_helpers' => array(
-        'factories' => array(
+        ],
+    ],
+    'view_helpers' => [
+        'factories' => [
             'supermessenger' => View\Helper\Service\SuperMessengerFactory::class,
-        ),
-        'aliases' => array(
+        ],
+        'aliases' => [
             'flashmessenger' => 'supermessenger',
-        ),
-    ),
+        ],
+    ],
 ];

@@ -28,8 +28,8 @@ class SuperMessengerFactory implements FactoryInterface
         $helper->setPluginFlashMessenger($flashMessenger);
         $config = $container->get('Config');
 
-        if (isset($config['view_helper']['supermessenger'])) {
-            $configHelper = $config['view_helper']['supermessenger'];
+        if (isset($config['supermessenger']['view_helper'])) {
+            $configHelper = $config['supermessenger']['view_helper'];
 
             if (isset($configHelper['message_open_format'])) {
                 $helper->setMessageOpenFormat($configHelper['message_open_format']);

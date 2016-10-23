@@ -8,12 +8,10 @@
 namespace SuperMessenger\View\Helper;
 
 use SuperMessenger\Controller\Plugin\SuperMessenger as PluginSuperMessenger;
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\View\Helper\AbstractHelper;
 use Zend\View\Helper\EscapeHtml;
 
-class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterface
+class SuperMessenger extends AbstractHelper
 {
     /**
      * @var ServiceLocatorInterface
@@ -234,28 +232,5 @@ class SuperMessenger extends AbstractHelper implements ServiceLocatorAwareInterf
         $this->pluginFlashMessenger = $pluginFlashMessenger;
 
         return $this;
-    }
-
-    /**
-     * Set the service locator.
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     *
-     * @return AbstractHelper
-     */
-    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
-    {
-        $this->serviceLocator = $serviceLocator;
-
-        return $this;
-    }
-
-    /**
-     * Get the service locator.
-     * @return \Zend\ServiceManager\ServiceLocatorInterface
-     */
-    public function getServiceLocator()
-    {
-        return $this->serviceLocator;
     }
 }
